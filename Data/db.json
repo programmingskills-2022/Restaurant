@@ -1,0 +1,84 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "پیتزا مخصوص خوشمزه",
+      "image": "./images/itemImages/KhoshmazeSpecial.jpg",
+      "ingredients": "سس مخصوص-ژامبون گوشت-ژامبون مرغ-گوشت چرخ کرده-هات داگ-قارچ -فلفل دلمه ای-گوجه فرنگی-پنیر",
+      "price": 165000,
+      "type": 1
+    },
+    {
+      "id": 2,
+      "name": "پیتزا مخصوص",
+      "image": "./images/itemImages/Special.jpg",
+      "ingredients": "سس مخصوص -ژامبون گوشت تنوری-ژامبون مرغ -هات داگ -قارج-فلفل دلمه ای-گوجه فرنگی -پنیر ",
+      "price": 150000,
+      "type": 1
+    },
+    {
+      "id": 3,
+      "name": "پیتزا رست بیف",
+      "image": "./images/itemImages/Roastbeaf.jpg",
+      "ingredients": "سس مخصوص-گوشت رست بیفف -قارچ -فلفل دلمه ای -گوجه فرنگی-پنیر",
+      "price": 210000,
+      "type": 1
+    },
+    {
+      "id": 4,
+      "name": "پیتزا گوشت و قارچ",
+      "image": "./images/itemImages/MeatAndMush.jpg",
+      "ingredients": "سس مخصوص-گوشت چرخ کرده -قارچ -فلفل دلمه ای-گوجه فرنگی -پنیر پیتزا",
+      "price": 195000,
+      "type": 1
+    },
+    {
+      "id": 5,
+      "name": "پیتزا جوجه کباب",
+      "image": "./images/itemImages/Chicken.jpg",
+      "ingredients": "سس مخصوص-جوجه کباب زعفرانی-قارچ-فلفل دلمه ای-گوجه فرنگی-پنیر",
+      "price": 170000,
+      "type": 1
+    },
+    {
+      "id": 6,
+      "name": "ساندویچ هات داگ",
+      "image": "./images/itemImages/S_hotdog.jpg",
+      "ingredients": "هات داگ دودی-پنیر پیتزا-خیارشور-گوجه فرنگی-سس مخصوص شبدیز",
+      "price": 120000,
+      "type": 2
+    },
+    {
+      "id": 7,
+      "name": "ساندویچ هات داگ ویژه",
+      "image": "./images/itemImages/S_specialHotdog.jpg",
+      "ingredients": "هات داگ دودی-پنیر پیتزا-قارچ-بیکن گوشت 98% -خیارشور-گوجه فرنگی-سس مخصوص شبدیز",
+      "price": 165000,
+      "type": 2
+    },
+    {
+      "id": 8,
+      "name": "ساندویچ فیله استریپس ویژه",
+      "image": "./images/itemImages/S_specialHotdog.jpg",
+      "ingredients": "فیله مرغ استریپس-بیکن گوشت 98% -پنیر گودا-سس مخصوص-کاهو-خیارشور",
+      "price": 165000,
+      "type": 2
+    },
+    {
+      "id": 9,
+      "name": "لازانیا ویژه",
+      "image": "./images/itemImages/P_Lazania.jpg",
+      "ingredients": "سس مخصوص سبزیجات -لازانیا -گوشت رست بیف -قارچ -فلفل دلمه -گوجه فرنگی-ذرت -پنیر",
+      "price": 165000,
+      "type": 3
+    },
+    {
+      "id": 10,
+      "name": "لازانیا خوشمزه",
+      "image": "./images/itemImages/P_LazaniaKhoshmaze.jpg",
+      "ingredients": "سس مخصوص سبزیجات -لازانیا-گوشت چرخ کرده -قارچ -فلفل دلمه -گوجه فرنگی-پنیر",
+      "price": 165000,
+      "type": 3
+    }
+  ]
+}
