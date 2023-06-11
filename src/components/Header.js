@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import CartIcon from "../svg/CartIcon";
 import LocationIcon from "../svg/LocationIcon";
-import HeaderNav from "./HeaderNav";
+import HeaderNav from "./MenuItems";
 import ItemsContext from "../context/ItemsContext";
 
 const Header = ({ items }) => {
@@ -116,20 +116,6 @@ const Header = ({ items }) => {
             خروج
           </a>
         </nav>
-      </section>
-      <section className="relative mx-auto hidden pt-20 md:block">
-        <img
-          className="max-w-full rounded-xl object-cover "
-          src="images/fastfood-edited.jpg"
-          alt="تصویر فست فود"
-        />
-      </section>
-      <hr className="pt-12 bg-black border border-double shadow-xl md:hidden" />
-      <section id="menu" className="relative max-w-4xl mx-auto my-8 ">
-        <h2 className="text-center text-xl font-bold hidden md:block">
-          منوی سفارش
-        </h2>
-        <HeaderNav items={items} />
       </section>
     </header>
   );

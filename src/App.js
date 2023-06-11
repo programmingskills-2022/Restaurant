@@ -6,6 +6,8 @@ import Contents from "./components/Contents";
 import Spinner from "./svg/Spinner";
 import ItemsContext from "./context/ItemsContext";
 import Footer from "./components/Footer";
+import Nav from "./components/Nav";
+import Menu from "./components/Menu";
 
 function App() {
   const { items, error, isLoading, type } = useContext(ItemsContext);
@@ -30,6 +32,9 @@ function App() {
   return (
     <div className="font-vazir">
       <Header items={filteredItems} />
+      <Nav />
+      <hr className="pt-12 bg-black border border-double shadow-xl md:hidden" />
+      <Menu />
       {/* <AddressBtn /> */}
       {content}
       <hr className="hidden md:block border border-double" />
