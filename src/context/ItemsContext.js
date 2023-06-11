@@ -8,7 +8,7 @@ export const DataProvider = ({ children }) => {
   const [type, setType] = useState(0);
   const [toggleMenu, setToggleMenu] = useState(true); //when false menu is shown, true is not shown
 
-  const url = "https://resta-cxv7.onrender.com/items";
+  const url = "http://localhost:3500/items";
   //"https://resta-cxv7.onrender.com/items";
   // "http://localhost:3500/items";
 
