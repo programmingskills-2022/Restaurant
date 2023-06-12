@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import CartIcon from "../svg/CartIcon";
 import HomeIcon from "../svg/HomeIcon";
 import UserIcon from "../svg/UserIcon";
+import ItemsContext from "../context/ItemsContext";
 
 const Footer = () => {
+  const { totalCount } = useContext(ItemsContext);
   return (
     <footer>
       <div className="hidden md:flex justify-evenly items-center py-8">
@@ -33,12 +36,13 @@ const Footer = () => {
       <div className="hidden bg-teal-700 text-white md:flex justify-evenly items-center py-2">
         <p>کلیه حقوق مادی معنوی این سایت متعلق به مجموعه خوشمزه می باشد</p>
       </div>
+      {/* for mobile responsive state */}
       <div className="fixed bottom-0 left-12 right-12 z-20 height-12 md:hidden bg-gray-300 mx-auto rounded-tl-full rounded-tr-full flex items-center justify-evenly text-teal-800">
         <HomeIcon />
         <div className="rounded-full w-14 h-14 bg-gray-300 flex items-center justify-center transform -translate-y-4 relative">
           <CartIcon />
           <div className="rounded-full w-6 h-6 bg-teal-800 absolute top-0 right-0 text-white flex justify-center items-center">
-            2
+            {totalCount}
           </div>
         </div>
         <UserIcon />

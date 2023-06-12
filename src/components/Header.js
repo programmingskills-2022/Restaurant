@@ -3,9 +3,10 @@ import CartIcon from "../svg/CartIcon";
 import LocationIcon from "../svg/LocationIcon";
 import HeaderNav from "./MenuItems";
 import ItemsContext from "../context/ItemsContext";
+import { Link } from "react-router-dom";
 
-const Header = ({ items }) => {
-  const { toggleMenu, setToggleMenu } = useContext(ItemsContext);
+const Header = () => {
+  const { toggleMenu, setToggleMenu, totalCount } = useContext(ItemsContext);
 
   const toggleMenuHandle = () => {
     setToggleMenu((prev) => !toggleMenu);
@@ -55,13 +56,16 @@ const Header = ({ items }) => {
           <LocationIcon />
           <p className="text-xl font-bold"> انتخاب آدرس</p>
         </div>
-        <button className="hover:bg-teal-700 bg-teal-600 text-white lg:px-4 md:px-2 py-2 rounded-xl shadow-xl lg:text-lg hidden md:block">
-          <div className="flex items-center lg:gap-2">
+        <button className="hover:bg-teal-700 bg-teal-600 text-white lg:px-4 md:px-2 py-2 rounded-xl shadow-xl lg:text-lg hidden md:block relative">
+          <div className="rounded-full w-6 h-6 bg-teal-800 absolute top-0 right-0 text-white flex justify-center items-center">
+            {totalCount}
+          </div>
+          <Link to="cart" className="flex items-center lg:gap-2">
             <span className="w-8 h-8">
               <CartIcon />
             </span>
             سبد خرید
-          </div>
+          </Link>
         </button>
         <p className="md:hidden"></p>
       </section>

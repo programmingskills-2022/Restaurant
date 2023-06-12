@@ -5,6 +5,7 @@ import Spinner from "../svg/Spinner";
 import ItemsContext from "../context/ItemsContext";
 import Nav from "../components/Nav";
 import Menu from "../components/Menu";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const { items, error, isLoading, type } = useContext(ItemsContext);
@@ -34,6 +35,7 @@ const Home = () => {
       {/* <AddressBtn /> */}
       {content}
       <hr className="hidden md:block border border-double" />
+      <Footer />
     </div>
   );
 };

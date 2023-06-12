@@ -80,5 +80,29 @@
       "price": 165000,
       "type": 3
     }
-  ]
+  ],
+  "orders": {
+    "items": [
+      {
+        "id": 1,
+        "name": "پیتزا مخصوص خوشمزه",
+        "image": "./images/itemImages/KhoshmazeSpecial.jpg",
+        "ingredients": "سس مخصوص-ژامبون گوشت-ژامبون مرغ-گوشت چرخ کرده-هات داگ-قارچ -فلفل دلمه ای-گوجه فرنگی-پنیر",
+        "price": 165000,
+        "type": 1,
+        "count": 1
+      },
+      {
+        "id": 2,
+        "name": "پیتزا مخصوص",
+        "image": "./images/itemImages/Special.jpg",
+        "ingredients": "سس مخصوص -ژامبون گوشت تنوری-ژامبون مرغ -هات داگ -قارج-فلفل دلمه ای-گوجه فرنگی -پنیر ",
+        "price": 150000,
+        "type": 1,
+        "count": 2
+      }
+    ],
+    "totalCount": 3,
+    "totalPrice": 465000
+  }
 }
