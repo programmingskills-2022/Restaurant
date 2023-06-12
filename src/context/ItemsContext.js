@@ -5,10 +5,12 @@ import axios from "axios";
 import { act } from "react-dom/test-utils";
 
 const ItemsContext = createContext({});
-const url = "http://localhost:3500/items";
-const cartUrl = "http://localhost:3500/orders";
+const url = "https://resta-cxv7.onrender.com/items";
+const cartUrl = "https://resta-cxv7.onrender.com/orders";
 //"https://resta-cxv7.onrender.com/items";
+//"https://resta-cxv7.onrender.com/orders";
 // "http://localhost:3500/items";
+// "http://localhost:3500/orders";
 
 export const DataProvider = ({ children }) => {
   //items difination
