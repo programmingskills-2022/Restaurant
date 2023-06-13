@@ -3,9 +3,10 @@ import CartIcon from "../svg/CartIcon";
 import HomeIcon from "../svg/HomeIcon";
 import UserIcon from "../svg/UserIcon";
 import ItemsContext from "../context/ItemsContext";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
-  const { totalCount } = useContext(ItemsContext);
+  const { totalCount, loggedUser, cartIconClicked } = useContext(ItemsContext);
   return (
     <footer>
       <div className="hidden md:flex justify-evenly items-center py-8">
@@ -39,13 +40,20 @@ const Footer = () => {
       {/* for mobile responsive state */}
       <div className="fixed bottom-0 left-12 right-12 z-20 height-12 md:hidden bg-gray-300 mx-auto rounded-tl-full rounded-tr-full flex items-center justify-evenly text-teal-800">
         <HomeIcon />
-        <div className="rounded-full w-14 h-14 bg-gray-300 flex items-center justify-center transform -translate-y-4 relative">
-          <CartIcon />
-          <div className="rounded-full w-6 h-6 bg-teal-800 absolute top-0 right-0 text-white flex justify-center items-center">
-            {totalCount}
+        <Link to="cart">
+          <div className="rounded-full w-14 h-14 bg-gray-300 flex items-center justify-center transform -translate-y-4 relative">
+            <CartIcon />
+            <div className="rounded-full w-6 h-6 bg-teal-800 absolute top-0 right-0 text-white flex justify-center items-center">
+              {totalCount}
+            </div>
           </div>
-        </div>
-        <UserIcon />
+        </Link>
+        <Link
+          to="login"
+          className={`${cartIconClicked ? "animate-wave-item" : ""}`}
+        >
+          <UserIcon color={`${loggedUser === null ? "gray" : "teal"}`} />
+        </Link>
       </div>
     </footer>
   );

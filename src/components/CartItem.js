@@ -8,9 +8,9 @@ const OrderItem = ({ item }) => {
 
   return (
     <Card kind={1}>
-      <div className="p-2 mx-4 flex justify-between items-center">
+      <div className="p-2 md:mx-4 flex justify-between items-center text-sm md:text-lg">
         <div className="flex items-center gap-4">
-          <img className="w-20 h-auto" alt="تصویر غذا" src={image} />
+          <img className="w-16 md-w-20 h-auto" alt="تصویر غذا" src={image} />
           <div className="flex flex-col gap-4">
             <p>{name}</p>
             <p>{price} تومان</p>

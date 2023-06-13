@@ -81,6 +81,14 @@
       "type": 3
     }
   ],
+  "users": [
+    {
+      "username": "1001",
+      "password": "1001",
+      "name": "ترانه حائری",
+      "address": "بلوار پیروزی"
+    }
+  ],
   "orders": {
     "items": [
       {
@@ -89,7 +97,6 @@
         "image": "./images/itemImages/KhoshmazeSpecial.jpg",
         "ingredients": "سس مخصوص-ژامبون گوشت-ژامبون مرغ-گوشت چرخ کرده-هات داگ-قارچ -فلفل دلمه ای-گوجه فرنگی-پنیر",
         "price": 165000,
-        "type": 1,
         "count": 1
       },
       {
@@ -98,11 +105,22 @@
         "image": "./images/itemImages/Special.jpg",
         "ingredients": "سس مخصوص -ژامبون گوشت تنوری-ژامبون مرغ -هات داگ -قارج-فلفل دلمه ای-گوجه فرنگی -پنیر ",
         "price": 150000,
-        "type": 1,
-        "count": 2
+        "count": 1
+      },
+      {
+        "id": 3,
+        "name": "پیتزا رست بیف",
+        "image": "./images/itemImages/Roastbeaf.jpg",
+        "ingredients": "سس مخصوص-گوشت رست بیفف -قارچ -فلفل دلمه ای -گوجه فرنگی-پنیر",
+        "price": 210000,
+        "count": 1
       }
     ],
     "totalCount": 3,
-    "totalPrice": 465000
+    "totalPrice": 525000,
+    "user": {
+      "id": 1,
+      "name": "taraneh"
+    }
   }
 }

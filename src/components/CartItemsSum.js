@@ -6,7 +6,7 @@ const CartItemsSum = () => {
   const { totalPrice } = useContext(ItemsContext);
   return (
     <Card kind={2}>
-      <div className="px-2 py-4 mx-4 flex justify-between items-center">
+      <div className="md:px-2 py-4 mx-4 flex justify-between text-sm md:text-lg items-center">
         <div className="flex flex-col gap-4 justify-center items-start">
           <p>هزینه ارسال:</p>
           <p>جمع کل:</p>
