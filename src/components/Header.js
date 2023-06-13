@@ -22,6 +22,7 @@ const Header = () => {
 
   const toggleMenuHandle = () => {
     setToggleMenu((prev) => !toggleMenu);
+    setLoggedUser((prev) => null);
   };
 
   const navToHome = () => {
