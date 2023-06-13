@@ -3,9 +3,9 @@ import useHttp from "../hooks/useHttp";
 import { useReducer } from "react";
 
 const ItemsContext = createContext({});
-const url = "http://localhost:3500/items";
-const cartUrl = "http://localhost:3500/orders";
-const userUrl = "http://localhost:3500/users";
+const url = "https://resta-cxv7.onrender.com/items";
+const cartUrl = "https://resta-cxv7.onrender.com/orders";
+const userUrl = "https://resta-cxv7.onrender.com/users";
 //"https://resta-cxv7.onrender.com/items";
 //"https://resta-cxv7.onrender.com/orders";
 // "http://localhost:3500/items";
