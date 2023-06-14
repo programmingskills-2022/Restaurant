@@ -7,7 +7,6 @@ import Card from "../general/Card";
 const ProfileOrders = () => {
   const { getProfileOrdersById, loggedUser } = useContext(ItemsContext);
   const profileOrders = getProfileOrdersById(loggedUser.id);
-
   return (
     <div className="pb-12">
       {profileOrders?.map((profileOrder) => {
