@@ -65,7 +65,7 @@ const Cart = () => {
         {cartItems?.map((item) => (
           <CartItem item={item} />
         ))}
-        <CartItemsSum totalPrice={cartItems.totalPrice} />
+        <CartItemsSum totalPrice={totalPrice} />
         <div className="flex justify-center gap-2 md:gap-4">
           <button
             className="bg-teal-600 text-white w-1/2 rounded-lg py-2"
