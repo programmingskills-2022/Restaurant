@@ -26,7 +26,7 @@ const Header = () => {
 
   const logout = () => {
     setToggleMenu((prev) => !toggleMenu);
-    clearCart();
+    clearUser();
   };
   const navToHome = () => {
     displayMenuAll();
