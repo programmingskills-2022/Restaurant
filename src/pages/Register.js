@@ -3,6 +3,7 @@ import Card from "../general/Card";
 import { useNavigate } from "react-router-dom";
 import ItemsContext from "../context/ItemsContext";
 import Message from "../general/Message";
+import axios from "axios";
 
 const Register = () => {
   const nameRef = useRef();
@@ -34,6 +35,10 @@ const Register = () => {
       },
       user
     );
+
+    const fetchUser = async () => {
+      const users = await axios.get();
+    };
 
     sendRequest(userUrl, "get", applyUsers);
     setIsCommit((prev) => true);
