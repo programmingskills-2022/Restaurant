@@ -11,13 +11,7 @@ export default function useHttp() {
     try {
       switch (type) {
         case "get":
-          response = await axios.get(url, {
-            headers: {
-              "Cache-Control": "no-cache",
-              Pragma: "no-cache",
-              Expires: "0",
-            },
-          });
+          response = await axios.get(url);
           applyData(response.data);
           if (!response) throw new Error("سرور پاسخ نمی دهد.");
           return;
