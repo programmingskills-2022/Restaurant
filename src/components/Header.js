@@ -25,8 +25,8 @@ const Header = () => {
   };
 
   const logout = () => {
-    setLoggedUser((prev) => null);
     setToggleMenu((prev) => !toggleMenu);
+    clearCart();
   };
   const navToHome = () => {
     displayMenuAll();
@@ -34,7 +34,6 @@ const Header = () => {
   };
 
   const clearUser = () => {
-    console.log(loggedUser);
     setLoggedUser((prev) => null);
     clearCart();
   };
