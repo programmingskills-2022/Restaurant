@@ -7,10 +7,19 @@ import useHttp from "../hooks/useHttp";
 import Message from "../general/Message";
 
 const Cart = () => {
-  const { cartItems, totalCount, totalPrice, cartUrl, clearCart, loggedUser } =
-    useContext(ItemsContext);
+  const {
+    orders,
+    cartItems,
+    totalCount,
+    totalPrice,
+    cartUrl,
+    clearCart,
+    loggedUser,
+    sendRequest,
+    applyOrders,
+  } = useContext(ItemsContext);
 
-  const { error, isLoading, sendRequest } = useHttp();
+  //const { error, isLoading, sendRequest } = useHttp();
   const [isCommitted, setIsCommitted] = useState(false);
   const navigate = useNavigate();
   let content = "";
@@ -20,17 +29,22 @@ const Cart = () => {
   };
 
   const commitCart = () => {
+    const lenght = Object.keys(orders).length;
+    const id = lenght ? orders[[lenght] - 1].id + 1 : 1;
+
     const order = {
+      id,
       items: cartItems,
       totalCount,
       totalPrice,
       user: {
-        id: 1,
-        name: "taraneh",
+        id: loggedUser.id,
+        username: loggedUser.username,
+        name: loggedUser.name,
+        address: loggedUser.address,
       },
     };
-
-    console.log(order);
+    //add new order to orders
     sendRequest(
       cartUrl,
       "post",
@@ -39,6 +53,8 @@ const Cart = () => {
       },
       order
     );
+    //refresh orders
+    sendRequest(cartUrl, "get", applyOrders);
     setIsCommitted(true);
     clearCart();
   };
@@ -49,7 +65,7 @@ const Cart = () => {
         {cartItems?.map((item) => (
           <CartItem item={item} />
         ))}
-        <CartItemsSum />
+        <CartItemsSum totalPrice={cartItems.totalPrice} />
         <div className="flex justify-center gap-2 md:gap-4">
           <button
             className="bg-teal-600 text-white w-1/2 rounded-lg py-2"

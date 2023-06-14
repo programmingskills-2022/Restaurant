@@ -22,9 +22,12 @@ const Header = () => {
 
   const toggleMenuHandle = () => {
     setToggleMenu((prev) => !toggleMenu);
-    setLoggedUser((prev) => null);
   };
 
+  const logout = () => {
+    setLoggedUser((prev) => null);
+    setToggleMenu((prev) => !toggleMenu);
+  };
   const navToHome = () => {
     displayMenuAll();
     navigate("/");
@@ -57,7 +60,7 @@ const Header = () => {
           </button>
           {/* logo and tel are shown in large size */}
           <figure className="w-12 h-12 hidden md:block">
-            <img src="images/logo.png" alt="تصویر لوگو" />
+            <img src="/images/logo.png" alt="تصویر لوگو" />
           </figure>
           <div className="md:flex flex-col items-center hidden px-2 font-bold">
             <p>مرکز تماس </p>
@@ -66,24 +69,24 @@ const Header = () => {
         </div>
         {/* nav is shown in large size */}
         <nav className="md:flex items-center lg:gap-6 md:gap-2 lg:text-lg hidden font-bold">
-          <a href="#" className="hover:opacity-60">
+          <Link to="/" className="hover:opacity-60">
             خانه
-          </a>
-          <a href="#menu" className="hover:opacity-60">
+          </Link>
+          <Link to="/" className="hover:opacity-60">
             منو سفارش
-          </a>
-          <a href="#branches" className="hover:opacity-60">
+          </Link>
+          <Link to="/" className="hover:opacity-60">
             شعب
-          </a>
-          <a href="#contact" className="hover:opacity-60">
+          </Link>
+          <Link to="/" className="hover:opacity-60">
             تماس با ما
-          </a>
-          <a href="#about" className="hover:opacity-60">
+          </Link>
+          <Link to="/" className="hover:opacity-60">
             درباره ما
-          </a>
+          </Link>
           {loggedUser === null && (
             <Link
-              to="login"
+              to="/login"
               //className="hover:opacity-60"
               className={`
               ${cartIconClicked ? "animate-wave-item" : ""}
@@ -93,7 +96,10 @@ const Header = () => {
             </Link>
           )}
           {loggedUser !== null && (
-            <button onClick={clearUser}>خروج از حساب کاربری</button>
+            <>
+              <Link to="/login/profile">پروفایل</Link>
+              <button onClick={clearUser}>خروج از حساب کاربری</button>
+            </>
           )}
         </nav>
         <div className="flex gap-1 hover:opacity-90 cursor-pointer md:hidden">
@@ -134,40 +140,40 @@ const Header = () => {
           class="flex flex-col justify-center items-center p-8"
           aria-label="mobile"
         >
-          <img className="w-28 h-32 mt-12" src="images/logo.png" />
-          <a
-            href="#"
+          <img className="w-28 h-32 mt-12" src="/images/logo.png" />
+          <Link
+            to="/"
             class="w-full p-4 text-center hover:opacity-90"
             onClick={toggleMenuHandle}
           >
             فروشگاه
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="/login/profile"
             class="w-full p-4 text-center hover:opacity-90"
             onClick={toggleMenuHandle}
           >
             پروفایل
-          </a>
+          </Link>
           <div class="flex flex-col justify-center items-center gap-2 w-full p-4 text-center hover:opacity-90">
             <p> شماره تماس:</p>
             <p>05138222222</p>
             <div className="flex">
               <a href="https://www.instagram.com/" alt="اینستاگرام">
-                <img src="images/instagram.png" />
+                <img src="/images/instagram.png" />
               </a>
               <a href="https://www.whatsapp.com/">
-                <img src="images/whatsapp.png" alt="واتساپ" />
+                <img src="/images/whatsapp.png" alt="واتساپ" />
               </a>
             </div>
           </div>
-          <a
-            href="#"
+          <Link
+            to="/"
             class="w-full p-4 text-center hover:opacity-90"
-            onClick={toggleMenuHandle}
+            onClick={logout}
           >
             خروج
-          </a>
+          </Link>
         </nav>
       </section>
     </header>

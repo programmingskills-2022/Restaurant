@@ -1,7 +1,7 @@
 import React, { useContext, useRef, useState } from "react";
 import Card from "../general/Card";
 import ItemsContext from "../context/ItemsContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const usernameRef = useRef();
@@ -20,6 +20,7 @@ const Login = () => {
     );
     if (user !== null) {
       setCartIconClicked(false);
+      console.log(user);
       navigate("/");
     }
   };
@@ -32,20 +33,24 @@ const Login = () => {
           onSubmit={(e) => e.preventDefault()}
           className="flex flex-col gap-1 pb-12"
         >
-          <label htmlFor="name" className="p-2 mx-4 ">
+          <label htmlFor="username" className="p-2 mx-4 ">
             کد کاربری:
           </label>
           <input
             type="text"
+            id="username"
+            name="username"
             ref={usernameRef}
             required
             className="p-2 mx-4 rounded-lg bg-papayawhip-default border border-teal-800 border-solid text-teal-900 text-lg outline-none md:text-xl"
           />
-          <label htmlFor="name" className="p-2 mx-4">
+          <label htmlFor="password" className="p-2 mx-4">
             رمز عبور:
           </label>
           <input
             type="password"
+            id="password"
+            name="password"
             required
             ref={passwordRef}
             className="p-2 mx-4 rounded-lg bg-papayawhip-default border border-teal-800 border-solid text-teal-900 text-lg md:text-xl outline-none mb-8"
@@ -60,9 +65,12 @@ const Login = () => {
             >
               ورود
             </button>
-            <button className="w-1/3 bg-teal-600 text-white rounded-xl mx-4 p-2 hover:bg-teal-700  text-lg md:text-xl">
+            <Link
+              to="new"
+              className="w-1/3 bg-teal-600 text-white text-center rounded-xl mx-4 p-2 hover:bg-teal-700  text-lg md:text-xl"
+            >
               عضویت
-            </button>
+            </Link>
             <button
               className="w-1/3 bg-teal-600 text-white rounded-xl mx-4 p-2 hover:bg-teal-700  text-lg md:text-xl"
               onClick={() => navigate("/")}

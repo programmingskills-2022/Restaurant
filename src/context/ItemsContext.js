@@ -16,7 +16,8 @@ export const DataProvider = ({ children }) => {
   //items difination
   const [items, setItems] = useState([]);
   const [users, setUsers] = useState([]);
-  const [Cart, setCart] = useState([]);
+  const [orders, setOrders] = useState([]);
+  //  const [Cart, setCart] = useState([]);
   const [type, setType] = useState(0);
   const [toggleMenu, setToggleMenu] = useState(true); //when false menu is shown, true is not shown
   const [cartIconClicked, setCartIconClicked] = useState(false);
@@ -125,6 +126,10 @@ export const DataProvider = ({ children }) => {
     setUsers(fetchedUsers);
   };
 
+  const applyOrders = (fetchedOrders) => {
+    setOrders(fetchedOrders);
+  };
+
   const existUser = (username, password) => {
     const user = users.find(
       (user) => user.username === username && user.password === password
@@ -136,17 +141,12 @@ export const DataProvider = ({ children }) => {
     } else return null;
   };
 
-  const { error, isLoading, sendRequest: fetchItems } = useHttp();
-
-  const applyCart = (fetchedCart) => {
-    dispatchCartAction({ type: "LOAD", cart: fetchedCart });
-  };
-
-  const { cartError, cartIsLoading, sendRequest: fetchCart } = useHttp();
+  const { error, isLoading, sendRequest } = useHttp();
 
   useEffect(() => {
-    fetchItems(url, "get", applyItems);
-    fetchItems(userUrl, "get", applyUsers);
+    sendRequest(url, "get", applyItems);
+    sendRequest(userUrl, "get", applyUsers);
+    sendRequest(cartUrl, "get", applyOrders);
     clearCartHandler();
   }, []);
 
@@ -166,12 +166,25 @@ export const DataProvider = ({ children }) => {
     setType(0);
   };
 
+  const getProfileOrdersById = (userId) => {
+    const tempProfileOrders = orders.filter(
+      (order) => order.user.id === userId
+    );
+
+    const profileOrders = tempProfileOrders.sort(
+      (order1, order2) => order2.id - order1.id
+    );
+    return profileOrders;
+  };
+
   return (
     <ItemsContext.Provider
       value={{
         cartUrl,
+        userUrl,
         items,
         users,
+        orders,
         loggedUser,
         setLoggedUser,
         error,
@@ -180,10 +193,6 @@ export const DataProvider = ({ children }) => {
         setType,
         toggleMenu,
         setToggleMenu,
-        //cart data
-        cartError,
-        cartIsLoading,
-        // getOrderByUserId,
         cartItems: cartState.items,
         totalCount: cartState.totalCount,
         totalPrice: cartState.totalPrice,
@@ -195,6 +204,10 @@ export const DataProvider = ({ children }) => {
         existUser,
         cartIconClicked,
         setCartIconClicked,
+        sendRequest,
+        applyOrders,
+        applyUsers,
+        getProfileOrdersById,
       }}
     >
       {children}

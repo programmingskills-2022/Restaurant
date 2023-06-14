@@ -34,7 +34,7 @@ const ContentItem = ({ item }) => {
     );
   } else {
     const editedItem = { ...item, count: count };
-    content = <CartCrud item={editedItem} />;
+    content = <CartCrud item={editedItem} committed={false} />;
   }
   return (
     <Card kind={0}>

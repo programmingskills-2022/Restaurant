@@ -3,7 +3,7 @@ import Card from "../general/Card";
 import ItemsContext from "../context/ItemsContext";
 import CartCrud from "./CartCrud";
 
-const OrderItem = ({ item }) => {
+const CartItem = ({ item, committed }) => {
   const { id, name, image, price, count } = item;
 
   return (
@@ -17,7 +17,7 @@ const OrderItem = ({ item }) => {
           </div>
         </div>
         <div className="flex flex-col items-center gap-4">
-          <CartCrud item={item} />
+          <CartCrud item={item} committed={committed} />
           <p>{count * price} ت</p>
         </div>
       </div>
@@ -25,4 +25,4 @@ const OrderItem = ({ item }) => {
   );
 };
 
-export default OrderItem;
+export default CartItem;

@@ -4,6 +4,9 @@ import RootLayout from "./layouts/RootLayout";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
+import { useEffect, useState } from "react";
+import Register from "./pages/Register";
+import Profile from "./pages/Profile";
 
 function App() {
   const router = createBrowserRouter([
@@ -13,7 +16,15 @@ function App() {
       children: [
         { index: true, element: <Home /> },
         { path: "cart", element: <Cart /> },
-        { path: "login", element: <Login /> },
+        {
+          path: "login",
+          element: <RootLayout />,
+          children: [
+            { index: true, element: <Login /> },
+            { path: "new", element: <Register /> },
+            { path: "profile", element: <Profile /> },
+          ],
+        },
       ],
     },
   ]);

@@ -11,7 +11,7 @@ const Footer = () => {
     <footer>
       <div className="hidden md:flex justify-evenly items-center py-8">
         <address>
-          <img src="images/enams.png" alt="نماد الکترونیکی" />
+          <img src="/images/enams.png" alt="نماد الکترونیکی" />
         </address>
         <address id="branches" className="flex flex-col items-center">
           <img className="w-24 h-24" src="images/logo.png" />
@@ -26,10 +26,10 @@ const Footer = () => {
           <p>info@KhoshmazeGroup.com</p>
           <div className="flex">
             <a href="#">
-              <img src="images/instagram.png" alt="اینستاگرام" />
+              <img src="/images/instagram.png" alt="اینستاگرام" />
             </a>
             <a href="#">
-              <img src="images/whatsapp.png" alt="واتساپ" />
+              <img src="/images/whatsapp.png" alt="واتساپ" />
             </a>
           </div>
         </address>

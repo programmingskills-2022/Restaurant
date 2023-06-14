@@ -2,8 +2,8 @@ import { useContext } from "react";
 import Card from "../general/Card";
 import ItemsContext from "../context/ItemsContext";
 
-const CartItemsSum = () => {
-  const { totalPrice } = useContext(ItemsContext);
+const CartItemsSum = ({ totalPrice }) => {
+  //const { totalPrice } = useContext(ItemsContext);
   return (
     <Card kind={2}>
       <div className="md:px-2 py-4 mx-4 flex justify-between text-sm md:text-lg items-center">

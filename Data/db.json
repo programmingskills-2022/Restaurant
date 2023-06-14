@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "پیتزا مخصوص خوشمزه",
-      "image": "./images/itemImages/KhoshmazeSpecial.jpg",
+      "image": "/images/itemImages/KhoshmazeSpecial.jpg",
       "ingredients": "سس مخصوص-ژامبون گوشت-ژامبون مرغ-گوشت چرخ کرده-هات داگ-قارچ -فلفل دلمه ای-گوجه فرنگی-پنیر",
       "price": 165000,
       "type": 1
@@ -11,7 +11,7 @@
     {
       "id": 2,
       "name": "پیتزا مخصوص",
-      "image": "./images/itemImages/Special.jpg",
+      "image": "/images/itemImages/Special.jpg",
       "ingredients": "سس مخصوص -ژامبون گوشت تنوری-ژامبون مرغ -هات داگ -قارج-فلفل دلمه ای-گوجه فرنگی -پنیر ",
       "price": 150000,
       "type": 1
@@ -19,7 +19,7 @@
     {
       "id": 3,
       "name": "پیتزا رست بیف",
-      "image": "./images/itemImages/Roastbeaf.jpg",
+      "image": "/images/itemImages/Roastbeaf.jpg",
       "ingredients": "سس مخصوص-گوشت رست بیفف -قارچ -فلفل دلمه ای -گوجه فرنگی-پنیر",
       "price": 210000,
       "type": 1
@@ -27,7 +27,7 @@
     {
       "id": 4,
       "name": "پیتزا گوشت و قارچ",
-      "image": "./images/itemImages/MeatAndMush.jpg",
+      "image": "/images/itemImages/MeatAndMush.jpg",
       "ingredients": "سس مخصوص-گوشت چرخ کرده -قارچ -فلفل دلمه ای-گوجه فرنگی -پنیر پیتزا",
       "price": 195000,
       "type": 1
@@ -35,7 +35,7 @@
     {
       "id": 5,
       "name": "پیتزا جوجه کباب",
-      "image": "./images/itemImages/Chicken.jpg",
+      "image": "/images/itemImages/Chicken.jpg",
       "ingredients": "سس مخصوص-جوجه کباب زعفرانی-قارچ-فلفل دلمه ای-گوجه فرنگی-پنیر",
       "price": 170000,
       "type": 1
@@ -43,7 +43,7 @@
     {
       "id": 6,
       "name": "ساندویچ هات داگ",
-      "image": "./images/itemImages/S_hotdog.jpg",
+      "image": "/images/itemImages/S_hotdog.jpg",
       "ingredients": "هات داگ دودی-پنیر پیتزا-خیارشور-گوجه فرنگی-سس مخصوص شبدیز",
       "price": 120000,
       "type": 2
@@ -51,7 +51,7 @@
     {
       "id": 7,
       "name": "ساندویچ هات داگ ویژه",
-      "image": "./images/itemImages/S_specialHotdog.jpg",
+      "image": "/images/itemImages/S_specialHotdog.jpg",
       "ingredients": "هات داگ دودی-پنیر پیتزا-قارچ-بیکن گوشت 98% -خیارشور-گوجه فرنگی-سس مخصوص شبدیز",
       "price": 165000,
       "type": 2
@@ -59,7 +59,7 @@
     {
       "id": 8,
       "name": "ساندویچ فیله استریپس ویژه",
-      "image": "./images/itemImages/S_specialHotdog.jpg",
+      "image": "/images/itemImages/S_specialHotdog.jpg",
       "ingredients": "فیله مرغ استریپس-بیکن گوشت 98% -پنیر گودا-سس مخصوص-کاهو-خیارشور",
       "price": 165000,
       "type": 2
@@ -67,7 +67,7 @@
     {
       "id": 9,
       "name": "لازانیا ویژه",
-      "image": "./images/itemImages/P_Lazania.jpg",
+      "image": "/images/itemImages/P_Lazania.jpg",
       "ingredients": "سس مخصوص سبزیجات -لازانیا -گوشت رست بیف -قارچ -فلفل دلمه -گوجه فرنگی-ذرت -پنیر",
       "price": 165000,
       "type": 3
@@ -75,7 +75,7 @@
     {
       "id": 10,
       "name": "لازانیا خوشمزه",
-      "image": "./images/itemImages/P_LazaniaKhoshmaze.jpg",
+      "image": "/images/itemImages/P_LazaniaKhoshmaze.jpg",
       "ingredients": "سس مخصوص سبزیجات -لازانیا-گوشت چرخ کرده -قارچ -فلفل دلمه -گوجه فرنگی-پنیر",
       "price": 165000,
       "type": 3
@@ -83,44 +83,192 @@
   ],
   "users": [
     {
+      "id": 1,
       "username": "1001",
       "password": "1001",
       "name": "ترانه حائری",
       "address": "بلوار پیروزی"
+    },
+    {
+      "id": 2,
+      "username": "1003",
+      "password": "1003",
+      "name": "حمیده حائری",
+      "address": "بلوار پیروزی"
+    },
+    {
+      "username": "1003",
+      "password": "1003",
+      "name": "حسین حائری",
+      "address": "بلوار پیروزی",
+      "id": 3
+    },
+    {
+      "id": 12,
+      "name": "بهار",
+      "address": "خیابان عماد خ",
+      "username": "bahar",
+      "password": "1111"
     }
   ],
-  "orders": {
-    "items": [
-      {
-        "id": 1,
-        "name": "پیتزا مخصوص خوشمزه",
-        "image": "./images/itemImages/KhoshmazeSpecial.jpg",
-        "ingredients": "سس مخصوص-ژامبون گوشت-ژامبون مرغ-گوشت چرخ کرده-هات داگ-قارچ -فلفل دلمه ای-گوجه فرنگی-پنیر",
-        "price": 165000,
-        "count": 1
-      },
-      {
-        "id": 2,
-        "name": "پیتزا مخصوص",
-        "image": "./images/itemImages/Special.jpg",
-        "ingredients": "سس مخصوص -ژامبون گوشت تنوری-ژامبون مرغ -هات داگ -قارج-فلفل دلمه ای-گوجه فرنگی -پنیر ",
-        "price": 150000,
-        "count": 1
-      },
-      {
-        "id": 3,
-        "name": "پیتزا رست بیف",
-        "image": "./images/itemImages/Roastbeaf.jpg",
-        "ingredients": "سس مخصوص-گوشت رست بیفف -قارچ -فلفل دلمه ای -گوجه فرنگی-پنیر",
-        "price": 210000,
-        "count": 1
-      }
-    ],
-    "totalCount": 3,
-    "totalPrice": 525000,
-    "user": {
+  "orders": [
+    {
       "id": 1,
-      "name": "taraneh"
+      "items": [
+        {
+          "id": 1,
+          "name": "پیتزا مخصوص خوشمزه",
+          "image": "/images/itemImages/KhoshmazeSpecial.jpg",
+          "ingredients": "سس مخصوص-ژامبون گوشت-ژامبون مرغ-گوشت چرخ کرده-هات داگ-قارچ -فلفل دلمه ای-گوجه فرنگی-پنیر",
+          "price": 165000,
+          "count": 1
+        },
+        {
+          "id": 3,
+          "name": "پیتزا رست بیف",
+          "image": "/images/itemImages/Roastbeaf.jpg",
+          "ingredients": "سس مخصوص-گوشت رست بیفف -قارچ -فلفل دلمه ای -گوجه فرنگی-پنیر",
+          "price": 210000,
+          "count": 1
+        }
+      ],
+      "totalCount": 2,
+      "totalPrice": 375000,
+      "user": {
+        "id": 1,
+        "username": "1001",
+        "name": "ترانه حائری",
+        "address": "بلوار پیروزی"
+      }
+    },
+    {
+      "id": 2,
+      "items": [
+        {
+          "id": 7,
+          "name": "ساندویچ هات داگ ویژه",
+          "image": "/images/itemImages/S_specialHotdog.jpg",
+          "ingredients": "هات داگ دودی-پنیر پیتزا-قارچ-بیکن گوشت 98% -خیارشور-گوجه فرنگی-سس مخصوص شبدیز",
+          "price": 165000,
+          "count": 1
+        }
+      ],
+      "totalCount": 1,
+      "totalPrice": 165000,
+      "user": {
+        "id": 1,
+        "username": "1001",
+        "name": "ترانه حائری",
+        "address": "بلوار پیروزی"
+      }
+    },
+    {
+      "id": 3,
+      "items": [
+        {
+          "id": 2,
+          "name": "پیتزا مخصوص",
+          "image": "/images/itemImages/Special.jpg",
+          "ingredients": "سس مخصوص -ژامبون گوشت تنوری-ژامبون مرغ -هات داگ -قارج-فلفل دلمه ای-گوجه فرنگی -پنیر ",
+          "price": 150000,
+          "count": 1
+        }
+      ],
+      "totalCount": 1,
+      "totalPrice": 150000,
+      "user": {
+        "id": 1,
+        "username": "1001",
+        "name": "ترانه حائری",
+        "address": "بلوار پیروزی"
+      }
+    },
+    {
+      "id": 4,
+      "items": [
+        {
+          "id": 5,
+          "name": "پیتزا جوجه کباب",
+          "image": "/images/itemImages/Chicken.jpg",
+          "ingredients": "سس مخصوص-جوجه کباب زعفرانی-قارچ-فلفل دلمه ای-گوجه فرنگی-پنیر",
+          "price": 170000,
+          "count": 1
+        }
+      ],
+      "totalCount": 1,
+      "totalPrice": 170000,
+      "user": {
+        "id": 1,
+        "username": "1001",
+        "name": "ترانه حائری",
+        "address": "بلوار پیروزی"
+      }
+    },
+    {
+      "id": 6,
+      "items": [
+        {
+          "id": 1,
+          "name": "پیتزا مخصوص خوشمزه",
+          "image": "/images/itemImages/KhoshmazeSpecial.jpg",
+          "ingredients": "سس مخصوص-ژامبون گوشت-ژامبون مرغ-گوشت چرخ کرده-هات داگ-قارچ -فلفل دلمه ای-گوجه فرنگی-پنیر",
+          "price": 165000,
+          "count": 1
+        },
+        {
+          "id": 2,
+          "name": "پیتزا مخصوص",
+          "image": "/images/itemImages/Special.jpg",
+          "ingredients": "سس مخصوص -ژامبون گوشت تنوری-ژامبون مرغ -هات داگ -قارج-فلفل دلمه ای-گوجه فرنگی -پنیر ",
+          "price": 150000,
+          "count": 1
+        },
+        {
+          "id": 6,
+          "name": "ساندویچ هات داگ",
+          "image": "/images/itemImages/S_hotdog.jpg",
+          "ingredients": "هات داگ دودی-پنیر پیتزا-خیارشور-گوجه فرنگی-سس مخصوص شبدیز",
+          "price": 120000,
+          "count": 2
+        }
+      ],
+      "totalCount": 4,
+      "totalPrice": 555000,
+      "user": {
+        "id": 12,
+        "username": "bahar",
+        "name": "بهار",
+        "address": "خیابان عماد خ"
+      }
+    },
+    {
+      "id": 7,
+      "items": [
+        {
+          "id": 1,
+          "name": "پیتزا مخصوص خوشمزه",
+          "image": "/images/itemImages/KhoshmazeSpecial.jpg",
+          "ingredients": "سس مخصوص-ژامبون گوشت-ژامبون مرغ-گوشت چرخ کرده-هات داگ-قارچ -فلفل دلمه ای-گوجه فرنگی-پنیر",
+          "price": 165000,
+          "count": 1
+        },
+        {
+          "id": 2,
+          "name": "پیتزا مخصوص",
+          "image": "/images/itemImages/Special.jpg",
+          "ingredients": "سس مخصوص -ژامبون گوشت تنوری-ژامبون مرغ -هات داگ -قارج-فلفل دلمه ای-گوجه فرنگی -پنیر ",
+          "price": 150000,
+          "count": 2
+        }
+      ],
+      "totalCount": 3,
+      "totalPrice": 465000,
+      "user": {
+        "id": 1,
+        "username": "1001",
+        "name": "ترانه حائری",
+        "address": "بلوار پیروزی"
+      }
     }
-  }
+  ]
 }
