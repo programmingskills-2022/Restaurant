@@ -11,21 +11,6 @@
     <title>رستوران خوشمزه</title>
     <link rel="stylesheet" href="/src/build/css/style.css" />
     <link rel="icon" type="image" href="favicon.ico" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>
-      var previous = null;
-      var current = null;
-      setInterval(function () {
-        $.getJSON("https://resta-cxv7.onrender.com/users", function (json) {
-          current = JSON.stringify(json);
-          if (previous && current && previous !== current) {
-            console.log("refresh");
-            location.reload();
-          }
-          previous = current;
-        });
-      }, 2000);
-    </script>
   </head>
   <body
     class="min-h-screen rtl bg-papayawhip-light dark:bg-black dark:text-white overflow-x-hidden"
