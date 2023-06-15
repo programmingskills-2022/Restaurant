@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import CartIcon from "../svg/CartIcon";
 import LocationIcon from "../svg/LocationIcon";
-import HeaderNav from "./MenuItems";
 import ItemsContext from "../context/ItemsContext";
 import { Link, useNavigate } from "react-router-dom";
 import MenuIcon from "../svg/MenuIcon";
@@ -21,11 +20,20 @@ const Header = () => {
   const navigate = useNavigate();
 
   const toggleMenuHandle = () => {
+    if (toggleMenu) {
+      document.body.classList.add("overflow-y-hidden");
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        //behavior: "smooth",
+      });
+    } else document.body.classList.remove("overflow-y-hidden");
+
     setToggleMenu((prev) => !toggleMenu);
   };
 
   const logout = () => {
-    setToggleMenu((prev) => !toggleMenu);
+    toggleMenuHandle();
     clearUser();
   };
   const navToHome = () => {
@@ -52,7 +60,7 @@ const Header = () => {
           {/* hamburger menu is shown in mobile size */}
           <button
             id="hamburger-button"
-            className="relative h-8 w-8 cursor-pointer text-3xl focus:outline-none md:hidden"
+            className="h-8 w-8 cursor-pointer text-3xl focus:outline-none md:hidden"
             onClick={toggleMenuHandle}
           >
             &#9776;
@@ -122,14 +130,14 @@ const Header = () => {
           </Link>
         </button>
       </section>
-      {/* right menu is shown in mobile size */}
       <section
         id="mobile-menu"
         class={`md:hidden top-0 absolute right-0 ${
           toggleMenu ? "hidden" : ""
-        } w-full origin-right animate-open-menu h-full overflow-y-hidden bg-papayawhip-light text-teal-950 text-xl z-50`}
+        } w-full origin-right animate-open-menu h-full bg-papayawhip-light text-teal-950 text-xl z-50`}
       >
         <button
+          id="close-menu"
           class="self-end px-4 text-6xl grid w-full place-content-end"
           onClick={toggleMenuHandle}
         >

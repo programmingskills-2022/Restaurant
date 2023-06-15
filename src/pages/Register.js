@@ -3,7 +3,6 @@ import Card from "../general/Card";
 import { useNavigate } from "react-router-dom";
 import ItemsContext from "../context/ItemsContext";
 import Message from "../general/Message";
-import axios from "axios";
 
 const Register = () => {
   const nameRef = useRef();
@@ -13,35 +12,41 @@ const Register = () => {
 
   const navigate = useNavigate();
 
-  const { users, sendRequest, userUrl, applyUsers } = useContext(ItemsContext);
+  const { existUser, users, sendRequest, userUrl, applyUsers } =
+    useContext(ItemsContext);
   const [isCommit, setIsCommit] = useState(false);
+  const [isTouched, setIsTouched] = useState(false);
 
   const addUser = (e) => {
     e.preventDefault();
-    const lenght = Object.keys(users).length;
-    const id = lenght ? users[lenght - 1].id + 1 : 1;
-    const user = {
-      id,
-      name: nameRef.current.value,
-      address: addressRef.current.value,
-      username: usernameRef.current.value,
-      password: passwordRef.current.value,
-    };
-    sendRequest(
-      userUrl,
-      "post",
-      () => {
-        console.log("new user");
-      },
-      user
-    );
+    setIsTouched((prev) => true);
+    const username = usernameRef.current.value;
 
-    const fetchUser = async () => {
-      const users = await axios.get();
-    };
+    if (existUser(username) !== null) {
+      setIsCommit((prev) => false);
+    } else {
+      const lenght = Object.keys(users).length;
+      const id = lenght ? users[lenght - 1].id + 1 : 1;
+      const user = {
+        id,
+        name: nameRef.current.value,
+        address: addressRef.current.value,
+        username,
+        password: passwordRef.current.value,
+      };
+      sendRequest(
+        userUrl,
+        "post",
+        () => {
+          console.log("new user");
+        },
+        user
+      );
 
-    sendRequest(userUrl, "get", applyUsers);
-    setIsCommit((prev) => true);
+      //refresh users
+      sendRequest(userUrl, "get", applyUsers);
+      setIsCommit((prev) => true);
+    }
   };
 
   let content = "";
@@ -96,6 +101,11 @@ const Register = () => {
             ref={passwordRef}
             className="p-2 mx-4 rounded-lg bg-papayawhip-default border border-teal-800 border-solid text-teal-900 text-lg md:text-xl outline-none mb-8"
           />
+          {isTouched && !isCommit && (
+            <p className="text-red-600 p-4">
+              با این کد کاربری قبلا حساب کاربری ایجاد شده است.
+            </p>
+          )}
           <div className="flex gap-2 justify-center">
             <button
               type="submit"

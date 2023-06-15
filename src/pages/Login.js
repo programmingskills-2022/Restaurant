@@ -7,14 +7,14 @@ const Login = () => {
   const usernameRef = useRef();
   const passwordRef = useRef();
 
-  const { existUser, loggedUser, setCartIconClicked } =
+  const { checkUser, loggedUser, setCartIconClicked } =
     useContext(ItemsContext);
   const [touchLogin, setTouchLogin] = useState(false);
   const navigate = useNavigate();
 
-  const existUserHandle = () => {
+  const checkUserHandle = () => {
     setTouchLogin(true);
-    const user = existUser(
+    const user = checkUser(
       usernameRef.current.value,
       passwordRef.current.value
     );
@@ -61,7 +61,7 @@ const Login = () => {
           <div className="flex gap-2 justify-center">
             <button
               className="w-1/3 bg-teal-600 text-white rounded-xl mx-4 p-2 hover:bg-teal-700 text-lg md:text-xl"
-              onClick={existUserHandle}
+              onClick={checkUserHandle}
             >
               ورود
             </button>

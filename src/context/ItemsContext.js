@@ -3,9 +3,9 @@ import useHttp from "../hooks/useHttp";
 import { useReducer } from "react";
 
 const ItemsContext = createContext({});
-const url = "https://resta-cxv7.onrender.com/items";
-const cartUrl = "https://resta-cxv7.onrender.com/orders";
-const userUrl = "https://resta-cxv7.onrender.com/users";
+const url = "http://localhost:3500/items";
+const cartUrl = "http://localhost:3500/orders";
+const userUrl = "http://localhost:3500/users";
 //"https://resta-cxv7.onrender.com/items";
 //"https://resta-cxv7.onrender.com/orders";
 // "http://localhost:3500/items";
@@ -131,11 +131,18 @@ export const DataProvider = ({ children }) => {
     setOrders(fetchedOrders);
   };
 
-  const existUser = (username, password) => {
+  const existUser = (username) => {
+    const user = users.find((user) => user.username === username);
+    if (user !== null && typeof user !== "undefined") {
+      setLoggedUser((prev) => user);
+      return user;
+    } else return null;
+  };
+
+  const checkUser = (username, password) => {
     const user = users.find(
       (user) => user.username === username && user.password === password
     );
-    console.log(user);
     if (user !== null && typeof user !== "undefined") {
       setLoggedUser((prev) => user);
       return user;
@@ -203,6 +210,7 @@ export const DataProvider = ({ children }) => {
         calcCountItem,
         displayMenuAll,
         existUser,
+        checkUser,
         cartIconClicked,
         setCartIconClicked,
         sendRequest,

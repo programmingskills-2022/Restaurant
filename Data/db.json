@@ -109,6 +109,13 @@
       "address": "خیابان عماد خ",
       "username": "bahar",
       "password": "1111"
+    },
+    {
+      "id": 14,
+      "name": "1001",
+      "address": "101",
+      "username": "1002",
+      "password": "100"
     }
   ],
   "orders": [
@@ -263,6 +270,27 @@
       ],
       "totalCount": 3,
       "totalPrice": 465000,
+      "user": {
+        "id": 1,
+        "username": "1001",
+        "name": "ترانه حائری",
+        "address": "بلوار پیروزی"
+      }
+    },
+    {
+      "id": 8,
+      "items": [
+        {
+          "id": 3,
+          "name": "پیتزا رست بیف",
+          "image": "/images/itemImages/Roastbeaf.jpg",
+          "ingredients": "سس مخصوص-گوشت رست بیفف -قارچ -فلفل دلمه ای -گوجه فرنگی-پنیر",
+          "price": 210000,
+          "count": 4
+        }
+      ],
+      "totalCount": 4,
+      "totalPrice": 840000,
       "user": {
         "id": 1,
         "username": "1001",
