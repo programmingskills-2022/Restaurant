@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.abccac07.css",
+    "main.js": "/static/js/main.2345843b.js",
+    "static/media/Vazir-Medium-FD-WOL.ttf": "/static/media/Vazir-Medium-FD-WOL.1fe71e7ef725ad5bffee.ttf",
+    "index.html": "/index.html",
+    "main.abccac07.css.map": "/static/css/main.abccac07.css.map",
+    "main.2345843b.js.map": "/static/js/main.2345843b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.abccac07.css",
+    "static/js/main.2345843b.js"
+  ]
+}
