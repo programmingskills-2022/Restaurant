@@ -1,12 +1,23 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import ItemsContext from "../context/ItemsContext";
 import CartItem from "../components/CartItem";
 import CartItemsSum from "./CartItemsSum";
 import Card from "../general/Card";
 
 const ProfileOrders = () => {
-  const { getProfileOrdersById, loggedUser } = useContext(ItemsContext);
+  const {
+    getProfileOrdersById,
+    loggedUser,
+    sendRequest,
+    applyOrders,
+    cartUrl,
+  } = useContext(ItemsContext);
   const profileOrders = getProfileOrdersById(loggedUser.id);
+
+  useEffect(() => {
+    sendRequest(cartUrl, "get", applyOrders);
+  }, [loggedUser]);
+
   return (
     <div className="pb-12">
       {profileOrders?.map((profileOrder) => {
@@ -16,7 +27,7 @@ const ProfileOrders = () => {
               سفارش شماره {profileOrder.id}
             </p>
             {profileOrder.items.map((item) => (
-              <CartItem item={item} committed={true} />
+              <CartItem item={item} key={item.id} committed={true} />
             ))}
             <CartItemsSum totalPrice={profileOrder.totalPrice} />
             <hr />

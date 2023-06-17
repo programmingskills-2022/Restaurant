@@ -123,7 +123,6 @@ export const DataProvider = ({ children }) => {
   };
 
   const applyUsers = (fetchedUsers) => {
-    console.log(fetchedUsers, "list of users");
     setUsers(fetchedUsers);
   };
 

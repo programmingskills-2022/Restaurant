@@ -18,7 +18,6 @@ const Profile = () => {
   };
 
   let content = "";
-  console.log(loggedUser);
   if (loggedUser === null)
     content = (
       <div className="py-20 px-4 max-w-4xl mx-auto">

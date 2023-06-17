@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import Card from "../general/Card";
 import ItemsContext from "../context/ItemsContext";
 import { Link, useNavigate } from "react-router-dom";
@@ -7,8 +7,14 @@ const Login = () => {
   const usernameRef = useRef();
   const passwordRef = useRef();
 
-  const { checkUser, loggedUser, setCartIconClicked } =
-    useContext(ItemsContext);
+  const {
+    checkUser,
+    loggedUser,
+    setCartIconClicked,
+    userUrl,
+    applyUsers,
+    sendRequest,
+  } = useContext(ItemsContext);
   const [touchLogin, setTouchLogin] = useState(false);
   const navigate = useNavigate();
 
@@ -24,6 +30,10 @@ const Login = () => {
       navigate("/");
     }
   };
+
+  useEffect(() => {
+    sendRequest(userUrl, "get", applyUsers);
+  }, [loggedUser]);
 
   return (
     <div className="my-24 mx-auto max-w-2xl px-4">

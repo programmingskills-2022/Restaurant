@@ -63,7 +63,7 @@ const Cart = () => {
     content = (
       <>
         {cartItems?.map((item) => (
-          <CartItem item={item} />
+          <CartItem item={item} key={item.id} />
         ))}
         <CartItemsSum totalPrice={totalPrice} />
         <div className="flex justify-center gap-2 md:gap-4">
