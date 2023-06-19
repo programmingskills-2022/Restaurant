@@ -3,15 +3,28 @@ import ItemsContext from "../context/ItemsContext";
 import useHttp from "../hooks/useHttp";
 
 const CartCrud = ({ item, committed }) => {
-  const { id, name, image, ingredients, price, count } = item;
+  const {
+    id,
+    FaName,
+    EnName,
+    image,
+    FaIngredients,
+    EnIngredients,
+    price,
+    count,
+    dic,
+    lang,
+  } = item;
   const { addCart, removeCart } = useContext(ItemsContext);
 
   const addHandler = () => {
     const newItem = {
       id,
-      name,
+      FaName,
+      EnName,
       image,
-      ingredients,
+      FaIngredients,
+      EnIngredients,
       price,
     };
 
@@ -41,7 +54,7 @@ const CartCrud = ({ item, committed }) => {
       >
         &#x2212;
       </button>
-      {committed && <p>عدد</p>}
+      {committed && <p>{lang ? dic[48].fa : dic[48].en}</p>}
     </div>
   );
 };

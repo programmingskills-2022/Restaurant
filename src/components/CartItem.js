@@ -4,7 +4,7 @@ import ItemsContext from "../context/ItemsContext";
 import CartCrud from "./CartCrud";
 
 const CartItem = ({ item, committed }) => {
-  const { id, name, image, price, count } = item;
+  const { id, FaName, EnName, image, price, count } = item;
   const { lang, dic } = useContext(ItemsContext);
 
   return (
@@ -13,7 +13,7 @@ const CartItem = ({ item, committed }) => {
         <div className="flex items-center gap-4">
           <img className="w-16 md-w-20 h-auto" alt="تصویر غذا" src={image} />
           <div className="flex flex-col gap-4">
-            <p>{name}</p>
+            <p>{lang ? FaName : EnName}</p>
             <p>
               {price} {lang ? dic[33].fa : dic[33].en}
             </p>

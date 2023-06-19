@@ -81,6 +81,7 @@ const dic = [
     en: "َThere is no menu available.",
     fa: "هیچ منوی موجود نیست.",
   },
+  { en: "no.", fa: "عدد" },
 ];
 
 export const DataProvider = ({ children }) => {

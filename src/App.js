@@ -32,6 +32,7 @@ function App() {
   ]);
 
   useEffect(() => {
+    console.log(dic);
     document.body.classList.toggle("ltr");
     document.body.classList.toggle("rtl");
   }, [lang]);
