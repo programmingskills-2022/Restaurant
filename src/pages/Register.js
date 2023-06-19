@@ -12,7 +12,7 @@ const Register = () => {
 
   const navigate = useNavigate();
 
-  const { existUser, users, sendRequest, userUrl, applyUsers } =
+  const { existUser, users, sendRequest, userUrl, applyUsers, dic, lang } =
     useContext(ItemsContext);
   const [isCommit, setIsCommit] = useState(false);
   const [isTouched, setIsTouched] = useState(false);
@@ -55,10 +55,12 @@ const Register = () => {
   else {
     content = (
       <Card>
-        <p className="text-center text-2xl p-4"> فرم عضویت</p>
+        <p className="text-center text-2xl p-4">
+          {lang ? dic[24].fa : dic[21].en}
+        </p>
         <form onSubmit={addUser} className="flex flex-col gap-1 pb-12">
           <label htmlFor="name" className="p-2 mx-4 ">
-            نام:
+            {lang ? dic[0].fa : dic[0].en}:
           </label>
           <input
             type="text"
@@ -69,7 +71,7 @@ const Register = () => {
             className="p-2 mx-4 rounded-lg bg-papayawhip-default border border-teal-800 border-solid text-teal-900 text-lg outline-none md:text-xl"
           />
           <label htmlFor="address" className="p-2 mx-4 ">
-            آدرس:
+            {lang ? dic[1].fa : dic[1].en}:
           </label>
           <input
             type="text"
@@ -80,7 +82,7 @@ const Register = () => {
             className="p-2 mx-4 rounded-lg bg-papayawhip-default border border-teal-800 border-solid text-teal-900 text-lg outline-none md:text-xl"
           />
           <label htmlFor="username" className="p-2 mx-4 ">
-            کد کاربری:
+            {lang ? dic[2].fa : dic[2].en}:
           </label>
           <input
             type="text"
@@ -91,7 +93,7 @@ const Register = () => {
             className="p-2 mx-4 rounded-lg bg-papayawhip-default border border-teal-800 border-solid text-teal-900 text-lg outline-none md:text-xl"
           />
           <label htmlFor="password" className="p-2 mx-4">
-            رمز عبور:
+            {lang ? dic[3].fa : dic[3].en}:
           </label>
           <input
             type="password"
@@ -102,22 +104,20 @@ const Register = () => {
             className="p-2 mx-4 rounded-lg bg-papayawhip-default border border-teal-800 border-solid text-teal-900 text-lg md:text-xl outline-none mb-8"
           />
           {isTouched && !isCommit && (
-            <p className="text-red-600 p-4">
-              با این کد کاربری قبلا حساب کاربری ایجاد شده است.
-            </p>
+            <p className="text-red-600 p-4">{lang ? dic[42].fa : dic[42].en}</p>
           )}
           <div className="flex gap-2 justify-center">
             <button
               type="submit"
               className="w-1/3 bg-teal-600 text-white rounded-xl mx-4 p-2 hover:bg-teal-700  text-lg md:text-xl"
             >
-              ثبت
+              {lang ? dic[25].fa : dic[25].en}
             </button>
             <button
               className="w-1/3 bg-teal-600 text-white rounded-xl mx-4 p-2 hover:bg-teal-700  text-lg md:text-xl"
               onClick={() => navigate(-1)}
             >
-              بازگشت
+              {lang ? dic[23].fa : dic[23].en}
             </button>
           </div>
         </form>

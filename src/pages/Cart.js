@@ -17,6 +17,8 @@ const Cart = () => {
     loggedUser,
     sendRequest,
     applyOrders,
+    lang,
+    dic,
   } = useContext(ItemsContext);
 
   //const { error, isLoading, sendRequest } = useHttp();
@@ -71,23 +73,23 @@ const Cart = () => {
             className="bg-teal-600 text-white w-1/2 rounded-lg py-2"
             onClick={commitCart}
           >
-            ثبت
+            {lang ? dic[25].fa : dic[25].en}
           </button>
           <button
             className="bg-teal-600 text-white w-1/2 rounded-lg py-2"
             onClick={navigateHandle}
           >
-            بازگشت
+            {lang ? dic[23].fa : dic[23].en}
           </button>
         </div>
       </>
     );
   else if (totalCount === 0 && isCommitted)
-    content = <Message message="سفارش شما با موفقیت ثبت شد." />;
+    content = <Message message={lang ? dic[44].fa : dic[44].en} />;
   else if (totalCount === 0 && loggedUser !== null) {
-    content = <Message message="سبد شما خالی می باشد" />;
+    content = <Message message={lang ? dic[45].fa : dic[45].en} />;
   } else if (loggedUser === null)
-    content = <Message message="لطفا به حساب کاربری خود وارد شوید" />;
+    content = <Message message={lang ? dic[46].fa : dic[46].en} />;
   return (
     <div className="md:px-4 px-2 flex flex-col gap-4 my-24 mx-auto max-w-4xl">
       {content}

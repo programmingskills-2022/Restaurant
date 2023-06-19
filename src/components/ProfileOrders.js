@@ -11,6 +11,8 @@ const ProfileOrders = () => {
     sendRequest,
     applyOrders,
     cartUrl,
+    lang,
+    dic,
   } = useContext(ItemsContext);
   const profileOrders = getProfileOrdersById(loggedUser.id);
 
@@ -24,7 +26,7 @@ const ProfileOrders = () => {
         return (
           <div className="max-w-4xl mx-auto flex flex-col gap-2 px-4">
             <p className="text-teal-800 text-sm md:text-lg text-center pt-8 font-bold">
-              سفارش شماره {profileOrder.id}
+              {lang ? dic[39].fa : dic[39].en} {profileOrder.id}
             </p>
             {profileOrder.items.map((item) => (
               <CartItem item={item} key={item.id} committed={true} />

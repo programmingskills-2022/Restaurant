@@ -4,11 +4,13 @@ import RootLayout from "./layouts/RootLayout";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
+import ItemsContext from "./context/ItemsContext";
 
 function App() {
+  const { lang, dic } = useContext(ItemsContext);
   const router = createBrowserRouter([
     {
       path: "/",
@@ -29,8 +31,14 @@ function App() {
     },
   ]);
 
+  useEffect(() => {
+    console.log(dic);
+    document.body.classList.toggle("ltr");
+    document.body.classList.toggle("rtl");
+  }, [lang]);
+
   return (
-    <div className="font-vazir">
+    <div className={`${lang ? "font-vazir" : "font-sans"}`}>
       <RouterProvider router={router}></RouterProvider>
     </div>
   );

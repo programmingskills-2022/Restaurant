@@ -6,7 +6,7 @@ import ItemsContext from "../context/ItemsContext";
 import Message from "../general/Message";
 
 const Profile = () => {
-  const { loggedUser } = useContext(ItemsContext);
+  const { loggedUser, lang, dic } = useContext(ItemsContext);
   const [isProfileOrders, setIsProfileOrders] = useState(false);
   const navigate = useNavigate();
 
@@ -32,19 +32,19 @@ const Profile = () => {
             className="w-1/3 bg-teal-600 hover:bg-teal-700 py-2 md:p-4 text-sm md:text-lg rounded-lg md:rounded-xl text-white"
             onClick={setIsNotProfileOrdersHandle}
           >
-            اطلاعات حساب کاربری
+            {lang ? dic[41].fa : dic[41].en}
           </button>
           <button
             className="w-1/3 bg-teal-600 hover:bg-teal-700 py-2 md:p-4 text-sm md:text-lg rounded-lg md:rounded-xl text-white"
             onClick={setIsProfileOrdersHandle}
           >
-            سوابق سفارشات
+            {lang ? dic[40].fa : dic[40].en}
           </button>
           <button
             className="w-1/3 bg-teal-600 hover:bg-teal-700 py-2 md:p-4 text-sm md:text-lg rounded-lg md:rounded-xl text-white"
             onClick={() => navigate("/")}
           >
-            بازگشت
+            {lang ? dic[23].fa : dic[23].en}
           </button>
         </div>
         {!isProfileOrders && <ProfileAccount />}

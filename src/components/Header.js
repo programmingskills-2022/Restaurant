@@ -15,6 +15,9 @@ const Header = () => {
     displayMenuAll,
     clearCart,
     cartIconClicked,
+    dic,
+    lang,
+    setLang,
   } = useContext(ItemsContext);
   const [name, setName] = useState("");
   const navigate = useNavigate();
@@ -46,10 +49,13 @@ const Header = () => {
     clearCart();
   };
 
+  const changeLang = () => {
+    setLang((prev) => !lang);
+  };
   useEffect(() => {
+    console.log(dic);
     //if user login?
     if (loggedUser !== null) setName(loggedUser.name);
-    console.log(name);
   }, [loggedUser]);
 
   return (
@@ -70,26 +76,26 @@ const Header = () => {
             <img src="/images/logo.png" alt="تصویر لوگو" />
           </figure>
           <div className="md:flex flex-col items-center hidden px-2 font-bold">
-            <p>مرکز تماس </p>
+            <p>{lang ? dic[4].fa : dic[4].en}</p>
             <p>38222222</p>
           </div>
         </div>
         {/* nav is shown in large size */}
         <nav className="md:flex items-center lg:gap-6 md:gap-2 lg:text-lg hidden font-bold">
           <Link to="/" className="hover:opacity-60">
-            خانه
+            {lang ? dic[5].fa : dic[5].en}
           </Link>
           <Link to="/" className="hover:opacity-60">
-            منو سفارش
+            {lang ? dic[6].fa : dic[6].en}
           </Link>
           <Link to="/" className="hover:opacity-60">
-            شعب
+            {lang ? dic[7].fa : dic[7].en}
           </Link>
           <Link to="/" className="hover:opacity-60">
-            تماس با ما
+            {lang ? dic[8].fa : dic[8].en}
           </Link>
           <Link to="/" className="hover:opacity-60">
-            درباره ما
+            {lang ? dic[9].fa : dic[9].en}
           </Link>
           {loggedUser === null && (
             <Link
@@ -99,19 +105,35 @@ const Header = () => {
               ${cartIconClicked ? "animate-wave-item" : ""}
               hover:opacity-60`}
             >
-              ورود{loggedUser?.name}
+              {lang ? dic[21].fa : dic[21].en}
+              {loggedUser?.name}
             </Link>
           )}
           {loggedUser !== null && (
             <>
-              <Link to="/login/profile">پروفایل</Link>
-              <button onClick={clearUser}>خروج از حساب کاربری</button>
+              <Link to="/login/profile">{lang ? dic[28].fa : dic[28].en}</Link>
+              <button onClick={clearUser}>
+                {lang ? dic[31].fa : dic[31].en}
+              </button>
             </>
           )}
+          <select
+            className="bg-papayawhip-light outline-none hover:opacity-60 cursor-pointer"
+            name="lang"
+            id="lang"
+            onChange={changeLang}
+          >
+            <option className="text-sm md:text-lg" value="Fa">
+              {lang ? "فارسی" : "Fa"}
+            </option>
+            <option className="text-sm md:text-lg" value="En">
+              {lang ? "انگلیسی" : "En"}
+            </option>
+          </select>
         </nav>
         <div className="flex gap-1 hover:opacity-90 cursor-pointer md:hidden">
           <LocationIcon />
-          <p className="text-xl font-bold"> انتخاب آدرس</p>
+          <p className="text-xl font-bold"> {lang ? dic[26].fa : dic[26].en}</p>
         </div>
         {/* menuIcon for showing all foods */}
         <button className="md:hidden" onClick={navToHome}>
@@ -122,11 +144,14 @@ const Header = () => {
           <div className="rounded-full w-6 h-6 bg-teal-800 absolute top-0 right-0 text-white flex justify-center items-center">
             {totalCount}
           </div>
-          <Link to="cart" className="flex items-center lg:gap-2">
+          <Link
+            to="cart"
+            className={`flex items-center lg:gap-2 ${lang ? "ltr" : "rtl"}`}
+          >
             <span className="w-8 h-8">
               <CartIcon />
             </span>
-            سبد خرید
+            {lang ? dic[10].fa : dic[10].en}
           </Link>
         </button>
       </section>
@@ -147,23 +172,36 @@ const Header = () => {
           class="flex flex-col justify-center items-center p-8"
           aria-label="mobile"
         >
+          <select
+            className="bg-papayawhip-light outline-none hover:opacity-60 cursor-pointer"
+            name="lang"
+            id="lang"
+            onChange={changeLang}
+          >
+            <option className="text-xs md:text-lg" value="Fa">
+              {lang ? "فارسی" : "Fa"}
+            </option>
+            <option className="text-xs md:text-lg" value="En">
+              {lang ? "انگلیسی" : "En"}
+            </option>
+          </select>
           <img className="w-28 h-32 mt-12" src="/images/logo.png" />
           <Link
             to="/"
             class="w-full p-4 text-center hover:opacity-90"
             onClick={toggleMenuHandle}
           >
-            فروشگاه
+            {lang ? dic[27].fa : dic[27].en}
           </Link>
           <Link
             to="/login/profile"
             class="w-full p-4 text-center hover:opacity-90"
             onClick={toggleMenuHandle}
           >
-            پروفایل
+            {lang ? dic[28].fa : dic[28].en}
           </Link>
           <div class="flex flex-col justify-center items-center gap-2 w-full p-4 text-center hover:opacity-90">
-            <p> شماره تماس:</p>
+            <p> {lang ? dic[29].fa : dic[29].en}</p>
             <p>05138222222</p>
             <div className="flex">
               <a href="https://www.instagram.com/" alt="اینستاگرام">
@@ -179,7 +217,7 @@ const Header = () => {
             class="w-full p-4 text-center hover:opacity-90"
             onClick={logout}
           >
-            خروج
+            {lang ? dic[30].fa : dic[30].en}
           </Link>
         </nav>
       </section>

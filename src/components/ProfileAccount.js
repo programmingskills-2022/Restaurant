@@ -2,7 +2,7 @@ import { useContext } from "react";
 import ItemsContext from "../context/ItemsContext";
 
 const ProfileAccount = () => {
-  const { loggedUser } = useContext(ItemsContext);
+  const { loggedUser, lang, dic } = useContext(ItemsContext);
 
   return (
     <form
@@ -10,7 +10,7 @@ const ProfileAccount = () => {
       className="flex flex-col gap-1 pb-12 max-w-2xl mx-auto"
     >
       <label htmlFor="username" className="p-2 mx-4 ">
-        کد کاربری:
+        {lang ? dic[2].fa : dic[2].en}:
       </label>
       <input
         type="text"
@@ -21,7 +21,7 @@ const ProfileAccount = () => {
         className="p-2 mx-4 rounded-lg bg-papayawhip-default border border-teal-800 border-solid text-teal-900 text-lg outline-none md:text-xl"
       />
       <label htmlFor="name" className="p-2 mx-4 ">
-        نام:
+        {lang ? dic[2].fa : dic[2].en}:
       </label>
       <input
         type="text"
@@ -32,7 +32,7 @@ const ProfileAccount = () => {
         className="p-2 mx-4 rounded-lg bg-papayawhip-default border border-teal-800 border-solid text-teal-900 text-lg outline-none md:text-xl"
       />
       <label htmlFor="address" className="p-2 mx-4 ">
-        آدرس:
+        {lang ? dic[1].fa : dic[1].en}:
       </label>
       <input
         type="text"

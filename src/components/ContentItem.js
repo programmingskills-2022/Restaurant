@@ -6,17 +6,20 @@ import CartCrud from "./CartCrud";
 import Message from "../general/Message";
 
 const ContentItem = ({ item }) => {
-  const { id, image, name, ingredients, price } = item;
+  const { id, image, FaName, EnName, FaIngredients, EnIngredients, price } =
+    item;
   let count = 0;
-  const { addCart, calcCountItem, loggedUser, setCartIconClicked } =
+  const { addCart, calcCountItem, loggedUser, setCartIconClicked, lang, dic } =
     useContext(ItemsContext);
 
   const addHandler = () => {
     const newItem = {
       id,
-      name,
+      FaName,
+      EnName,
       image,
-      ingredients,
+      FaIngredients,
+      EnIngredients,
       price,
     };
     if (loggedUser !== null) {
@@ -38,14 +41,20 @@ const ContentItem = ({ item }) => {
   }
   return (
     <Card kind={0}>
-      <div className="flex flex-col items-center py-4">
-        <img className="w-1/2 h-auto" src={image} alt={name} />
-        <p className="sm:text-lg text-sm font-bold py-2">{name}</p>
-        <p className="py-8 px-2 text-sm h-36">{ingredients}</p>
+      <div
+        className={`flex flex-col items-center py-4 ${lang ? "rtl" : "ltr"}`}
+      >
+        <img className="w-1/2 h-auto" src={image} alt={FaName} />
+        <p className="md:text-lg text-xs font-bold py-2">
+          {lang ? FaName : EnName}
+        </p>
+        <p className="py-8 px-2 text-sm h-36">
+          {lang ? FaIngredients : EnIngredients}
+        </p>
         <div className="flex w-full items-center justify-between text-sm md:text-lg md:px-2 px-1">
           <div className="flex justify-center items-center gap-1">
             <p className="md:text-lg">{price}</p>
-            <p className="md:text-sm">تومان</p>
+            <p className="md:text-sm">{lang ? dic[33].fa : dic[33].en}</p>
           </div>
           {content}
         </div>

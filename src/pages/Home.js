@@ -8,7 +8,7 @@ import Menu from "../components/Menu";
 import Footer from "../components/Footer";
 
 const Home = () => {
-  const { items, error, isLoading, type } = useContext(ItemsContext);
+  const { items, error, isLoading, type, lang, dic } = useContext(ItemsContext);
   const [filteredItems, setFilteredItems] = useState([]);
 
   useEffect(() => {
@@ -24,7 +24,11 @@ const Home = () => {
   } else if (error) {
     content = <p className="text-xl text-center p-12">{error}</p>;
   } else if (!filteredItems.length) {
-    content = <p className="text-xl text-center p-12">هیچ منویی موجود نیست</p>;
+    content = (
+      <p className="text-xl text-center p-12">
+        {lang ? dic[47].fa : dic[47].en}
+      </p>
+    );
   } else content = <Contents items={filteredItems} />;
 
   return (

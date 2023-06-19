@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import ItemsContext from "../context/ItemsContext";
 
 const Menu = () => {
-  const { displayMenuAll } = useContext(ItemsContext);
+  const { displayMenuAll, dic, lang } = useContext(ItemsContext);
 
   return (
     <section
@@ -16,7 +16,7 @@ const Menu = () => {
         className=" text-xl font-bold hidden md:block hover:text-teal-700"
         onClick={displayMenuAll}
       >
-        منوی سفارش
+        {lang ? dic[6].fa : dic[6].en}
       </button>
       <NavItems />
     </section>
