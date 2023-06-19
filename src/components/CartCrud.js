@@ -12,10 +12,8 @@ const CartCrud = ({ item, committed }) => {
     EnIngredients,
     price,
     count,
-    dic,
-    lang,
   } = item;
-  const { addCart, removeCart } = useContext(ItemsContext);
+  const { addCart, removeCart, dic, lang } = useContext(ItemsContext);
 
   const addHandler = () => {
     const newItem = {
@@ -36,7 +34,7 @@ const CartCrud = ({ item, committed }) => {
   };
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-npm2">
       <button
         className={`bg-teal-600 text-white text-xl md:text-2xl font-bold px-1 md:px-2 rounded-lg hover:bg-teal-800 ${
           committed ? "hidden" : ""
