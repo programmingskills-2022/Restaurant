@@ -1,7 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import Card from "./Card";
+import { useContext } from "react";
+import ItemsContext from "../context/ItemsContext";
 
 const Message = ({ message }) => {
+  const { lang, dic } = useContext(ItemsContext);
   const navigate = useNavigate();
 
   const navigateHomePage = () => {
@@ -16,7 +19,7 @@ const Message = ({ message }) => {
           className="bg-teal-600 hover:bg-teal-700 text-white w-32 p-2 rounded-xl"
           onClick={navigateHomePage}
         >
-          بازگشت
+          {lang ? dic[23].fa : dic[23].en}
         </button>
       </div>
     </Card>

@@ -117,28 +117,35 @@ const Header = () => {
               </button>
             </>
           )}
-          <select
-            className="bg-papayawhip-light outline-none hover:opacity-60 cursor-pointer"
-            name="lang"
-            id="lang"
-            onChange={changeLang}
-          >
-            <option className="text-sm md:text-lg" value="Fa">
-              {lang ? "فارسی" : "Fa"}
-            </option>
-            <option className="text-sm md:text-lg" value="En">
-              {lang ? "انگلیسی" : "En"}
-            </option>
-          </select>
+          <button className={`${lang ? "hidden" : ""}`} onClick={changeLang}>
+            FA
+          </button>
+          <button className={`${lang ? "" : "hidden"}`} onClick={changeLang}>
+            EN
+          </button>
         </nav>
         <div className="flex gap-1 hover:opacity-90 cursor-pointer md:hidden">
           <LocationIcon />
           <p className="text-xl font-bold"> {lang ? dic[26].fa : dic[26].en}</p>
         </div>
         {/* menuIcon for showing all foods */}
-        <button className="md:hidden" onClick={navToHome}>
-          <MenuIcon />
-        </button>
+        <div className="flex gap-2">
+          <button
+            className={`md:hidden ${lang ? "hidden" : ""}`}
+            onClick={changeLang}
+          >
+            FA
+          </button>
+          <button
+            className={`md:hidden ${lang ? "" : "hidden"}`}
+            onClick={changeLang}
+          >
+            EN
+          </button>
+          <button className="md:hidden" onClick={navToHome}>
+            <MenuIcon />
+          </button>
+        </div>
         {/* cart icon is shown in large size */}
         <button className="hover:bg-teal-700 bg-teal-600 text-white lg:px-4 md:px-2 py-2 rounded-xl shadow-xl lg:text-lg hidden md:block relative">
           <div className="rounded-full w-6 h-6 bg-teal-800 absolute top-0 right-0 text-white flex justify-center items-center">
@@ -172,19 +179,6 @@ const Header = () => {
           class="flex flex-col justify-center items-center p-8"
           aria-label="mobile"
         >
-          <select
-            className="bg-papayawhip-light outline-none hover:opacity-60 cursor-pointer"
-            name="lang"
-            id="lang"
-            onChange={changeLang}
-          >
-            <option className="text-xs md:text-lg" value="Fa">
-              {lang ? "فارسی" : "Fa"}
-            </option>
-            <option className="text-xs md:text-lg" value="En">
-              {lang ? "انگلیسی" : "En"}
-            </option>
-          </select>
           <img className="w-28 h-32 mt-12" src="/images/logo.png" />
           <Link
             to="/"
