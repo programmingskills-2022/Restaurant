@@ -50,10 +50,10 @@ const Header = () => {
   };
 
   const changeLang = () => {
+    document.title = lang ? "Delicious Restaurant" : "رستوران خوشمزه";
     setLang((prev) => !lang);
   };
   useEffect(() => {
-    console.log(dic);
     //if user login?
     if (loggedUser !== null) setName(loggedUser.name);
   }, [loggedUser]);
