@@ -82,6 +82,10 @@ const dic = [
     fa: "هیچ منوی موجود نیست.",
   },
   { en: "no.", fa: "عدد" },
+  {
+    en: "َThe account was created successfully.",
+    fa: "حساب کاربری با موفقیت ایجاد شد",
+  },
 ];
 
 export const DataProvider = ({ children }) => {

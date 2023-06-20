@@ -21,7 +21,7 @@ const Profile = () => {
   if (loggedUser === null)
     content = (
       <div className="py-20 px-4 max-w-4xl mx-auto">
-        <Message message="لطفا به حساب کاربری خود وارد شوید." />
+        <Message message={lang ? dic[46].fa : dic[46].en} />
       </div>
     );
   else

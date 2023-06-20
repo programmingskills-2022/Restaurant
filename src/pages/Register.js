@@ -50,13 +50,12 @@ const Register = () => {
   };
 
   let content = "";
-  if (isCommit)
-    content = <Message message={`حساب کاربری با موفقیت ایجاد شد.`} />;
+  if (isCommit) content = <Message message={lang ? dic[49].fa : dic[49].en} />;
   else {
     content = (
       <Card>
         <p className="text-center text-2xl p-4">
-          {lang ? dic[24].fa : dic[21].en}
+          {lang ? dic[21].fa : dic[21].en}
         </p>
         <form onSubmit={addUser} className="flex flex-col gap-1 pb-12">
           <label htmlFor="name" className="p-2 mx-4 ">
