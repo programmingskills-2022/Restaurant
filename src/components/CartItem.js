@@ -5,7 +5,7 @@ import CartCrud from "./CartCrud";
 
 const CartItem = ({ item, committed }) => {
   const { id, FaName, EnName, image, price, count } = item;
-  const { lang, dic } = useContext(ItemsContext);
+  const { lang, dic, formatNum } = useContext(ItemsContext);
 
   return (
     <Card kind={1}>
@@ -15,14 +15,14 @@ const CartItem = ({ item, committed }) => {
           <div className="flex flex-col gap-4">
             <p>{lang ? FaName : EnName}</p>
             <p>
-              {price} {lang ? dic[33].fa : dic[33].en}
+              {formatNum(price)} {lang ? dic[33].fa : dic[33].en}
             </p>
           </div>
         </div>
         <div className="flex flex-col items-center gap-4">
           <CartCrud item={item} committed={committed} />
           <p>
-            {count * price} {lang ? dic[38].fa : dic[38].en}
+            {formatNum(count * price)} {lang ? dic[38].fa : dic[38].en}
           </p>
         </div>
       </div>

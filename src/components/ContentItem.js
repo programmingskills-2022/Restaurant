@@ -9,8 +9,15 @@ const ContentItem = ({ item }) => {
   const { id, image, FaName, EnName, FaIngredients, EnIngredients, price } =
     item;
   let count = 0;
-  const { addCart, calcCountItem, loggedUser, setCartIconClicked, lang, dic } =
-    useContext(ItemsContext);
+  const {
+    addCart,
+    calcCountItem,
+    loggedUser,
+    setCartIconClicked,
+    lang,
+    dic,
+    formatNum,
+  } = useContext(ItemsContext);
 
   const addHandler = () => {
     const newItem = {
@@ -53,7 +60,7 @@ const ContentItem = ({ item }) => {
         </p>
         <div className="flex w-full items-center justify-between text-sm md:text-lg md:px-2 px-1">
           <div className="flex justify-center items-center gap-1">
-            <p className="md:text-lg">{price}</p>
+            <p className="md:text-lg">{formatNum(price)}</p>
             <p className="md:text-sm">{lang ? dic[33].fa : dic[33].en}</p>
           </div>
           {content}

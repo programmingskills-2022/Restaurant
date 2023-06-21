@@ -3,9 +3,9 @@ import useHttp from "../hooks/useHttp";
 import { useReducer } from "react";
 
 const ItemsContext = createContext({});
-const url = "https://resta-cxv7.onrender.com/items";
-const cartUrl = "https://resta-cxv7.onrender.com/orders";
-const userUrl = "https://resta-cxv7.onrender.com/users";
+const url = "http://localhost:3500/items";
+const cartUrl = "http://localhost:3500/orders";
+const userUrl = "http://localhost:3500/users";
 //"https://resta-cxv7.onrender.com/items";
 //"https://resta-cxv7.onrender.com/orders";
 // "http://localhost:3500/items";
@@ -264,6 +264,17 @@ export const DataProvider = ({ children }) => {
     return profileOrders;
   };
 
+  function formatNum(n) {
+    var splits = n.toString().split(".");
+    const numSplit = splits[0];
+    const decimalSplit = splits[1];
+    const thousands = /\B(?=(\d{3})+(?!\d))/g;
+    return (
+      numSplit.replace(thousands, ",") +
+      (decimalSplit ? "." + decimalSplit : "")
+    );
+  }
+
   return (
     <ItemsContext.Provider
       value={{
@@ -299,6 +310,7 @@ export const DataProvider = ({ children }) => {
         applyOrders,
         applyUsers,
         getProfileOrdersById,
+        formatNum,
       }}
     >
       {children}

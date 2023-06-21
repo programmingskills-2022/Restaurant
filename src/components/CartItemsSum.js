@@ -3,7 +3,7 @@ import Card from "../general/Card";
 import ItemsContext from "../context/ItemsContext";
 
 const CartItemsSum = ({ totalPrice }) => {
-  const { lang, dic } = useContext(ItemsContext);
+  const { lang, dic, formatNum } = useContext(ItemsContext);
   return (
     <Card kind={2}>
       <div className="md:px-2 py-4 mx-4 flex justify-between text-sm md:text-lg items-center">
@@ -15,10 +15,10 @@ const CartItemsSum = ({ totalPrice }) => {
         <div className="flex flex-col gap-4 justify-center items-end">
           <p>{lang ? dic[35].fa : dic[35].en}</p>
           <p>
-            {totalPrice} {lang ? dic[33].fa : dic[33].en}
+            {formatNum(totalPrice)} {lang ? dic[33].fa : dic[33].en}
           </p>
           <p>
-            {totalPrice} {lang ? dic[33].fa : dic[33].en}
+            {formatNum(totalPrice)} {lang ? dic[33].fa : dic[33].en}
           </p>
         </div>
       </div>
