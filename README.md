@@ -1,3 +1,40 @@
+# Restaurant
+This is a Web-based project
+
+## Technologies:
+front-end:
+•	React
+•	Tailwind
+•	Context
+backend:
+•	json server
+
+## Demo Images
+### MainPage(En - Desktop)
+![image](https://github.com/programmingskills-2022/Restaurant/assets/119696712/8907f61a-ed39-49b6-be95-845c4b61a877)
+
+### MainPage(Fa - Desktop)
+![image](https://github.com/programmingskills-2022/Restaurant/assets/119696712/dc1adddc-880a-4f26-bc89-06f1de21f86a)
+
+### MainPage(En- Mobile)
+![image](https://github.com/programmingskills-2022/Restaurant/assets/119696712/d265afee-0f39-45c2-83c1-925aa4dda398)
+
+### MainPage(Fa - Mobile)
+![image](https://github.com/programmingskills-2022/Restaurant/assets/119696712/b91f7c1d-58fb-4a3e-8358-59390f9d5948)
+
+### Menu(En - Mobile)
+![image](https://github.com/programmingskills-2022/Restaurant/assets/119696712/1783a42d-e48a-4704-a1a0-0d8cd177d26f)
+
+### Menu(Fa - Mobile)
+![image](https://github.com/programmingskills-2022/Restaurant/assets/119696712/23c6b497-bbd6-4c87-9fa1-212e850c190c)
+
+### SamplePage(En)
+![image](https://github.com/programmingskills-2022/Restaurant/assets/119696712/f1d82415-3eef-4020-b066-6b40333efc94)
+
+### SamplePage(Fa)
+![image](https://github.com/programmingskills-2022/Restaurant/assets/119696712/d6d92f89-f53e-4998-bd49-1f71d7114c50)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
